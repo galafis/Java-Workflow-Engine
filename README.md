@@ -1,188 +1,131 @@
-# 🚀 Java Workflow Engine
+# Java Workflow Engine
 
-> Professional Java-Workflow-Engine - Created by Gabriel Demetrios Lafis
+[English](#english) | [Portugues](#portugues)
 
-[![HTML5](https://img.shields.io/badge/HTML5-5-E34F26.svg)](https://img.shields.io/badge/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+---
 
-[English](#english) | [Português](#português)
+## Portugues
+
+Motor de workflow empresarial em Java com maquina de estados, execucao condicional de transicoes, processamento paralelo e auditoria completa de processos de negocio.
+
+### Arquitetura
+
+```mermaid
+graph TD
+    A[WorkflowEngine] --> B[WorkflowDefinition]
+    A --> C[WorkflowInstance]
+    B --> D[State]
+    B --> E[Transition]
+    C --> F[WorkflowContext]
+    C --> G[StateHistory]
+    D --> H{State Type}
+    H --> I[START]
+    H --> J[TASK]
+    H --> K[DECISION]
+    H --> L[PARALLEL_GATEWAY]
+    H --> M[END]
+    E --> N[TransitionCondition]
+    F --> O[Variables]
+    F --> P[AuditLog]
+    A --> Q[WorkflowListener]
+    A --> R[ExecutorService]
+```
+
+### Funcionalidades
+
+- Definicao de workflows com estados e transicoes condicionais
+- Maquina de estados com tipos: START, TASK, DECISION, PARALLEL_GATEWAY, END
+- Execucao assincrona com CompletableFuture e thread pool
+- Contexto compartilhado com variaveis e log de auditoria
+- Sistema de listeners para eventos do workflow
+- Historico completo de transicoes de estado
+
+### Tecnologias
+
+| Tecnologia | Finalidade |
+|---|---|
+| Java 11+ | Linguagem principal |
+| Maven | Gerenciamento de dependencias |
+| ExecutorService | Execucao paralela |
+| CompletableFuture | Processamento assincrono |
+
+### Como Executar
+
+```bash
+mvn compile
+mvn exec:java -Dexec.mainClass="com.galafis.workflow.WorkflowEngine"
+```
+
+### Estrutura do Projeto
+
+```
+Java-Workflow-Engine/
+├── src/main/java/com/galafis/
+│   └── workflow/
+│       └── WorkflowEngine.java
+├── pom.xml
+├── LICENSE
+└── README.md
+```
 
 ---
 
 ## English
 
-### 🎯 Overview
+Enterprise workflow engine in Java featuring state machine execution, conditional transitions, parallel processing, and full business process auditing.
 
-**Java Workflow Engine** is a production-grade HTML application complemented by CSS, Java that showcases modern software engineering practices including clean architecture, comprehensive testing, containerized deployment, and CI/CD readiness.
-
-The codebase comprises **138 lines** of source code organized across **3 modules**, following industry best practices for maintainability, scalability, and code quality.
-
-### ✨ Key Features
-
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
-
-### 🏗️ Architecture
+### Architecture
 
 ```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
+graph TD
+    A[WorkflowEngine] --> B[WorkflowDefinition]
+    A --> C[WorkflowInstance]
+    B --> D[State]
+    B --> E[Transition]
+    C --> F[WorkflowContext]
+    C --> G[StateHistory]
+    D --> H{State Type}
+    H --> I[START]
+    H --> J[TASK]
+    H --> K[DECISION]
+    H --> L[PARALLEL_GATEWAY]
+    H --> M[END]
+    E --> N[TransitionCondition]
+    F --> O[Variables]
+    F --> P[AuditLog]
+    A --> Q[WorkflowListener]
+    A --> R[ExecutorService]
 ```
 
-### 🚀 Quick Start
+### Features
 
-#### Prerequisites
+- Workflow definitions with states and conditional transitions
+- State machine with types: START, TASK, DECISION, PARALLEL_GATEWAY, END
+- Async execution with CompletableFuture and thread pool
+- Shared context with variables and audit logging
+- Listener system for workflow events
+- Full state transition history
 
-#### Installation
+### Technologies
+
+| Technology | Purpose |
+|---|---|
+| Java 11+ | Primary language |
+| Maven | Dependency management |
+| ExecutorService | Parallel execution |
+| CompletableFuture | Async processing |
+
+### How to Run
 
 ```bash
-git clone https://github.com/galafis/Java-Workflow-Engine.git
-cd Java-Workflow-Engine
+mvn compile
+mvn exec:java -Dexec.mainClass="com.galafis.workflow.WorkflowEngine"
 ```
 
-### 📁 Project Structure
+## Author
 
-```
-Java-Workflow-Engine/
-├── docs/          # Documentation
-├── src/          # Source code
-│   └── main/
-│       └── java/
-├── LICENSE
-└── README.md
-```
+Gabriel Demetrios Lafis
 
-### 🛠️ Tech Stack
+## License
 
-| Technology | Description | Role |
-|------------|-------------|------|
-| **HTML** | Core Language | Primary |
-| CSS | 1 files | Supporting |
-| Java | 1 files | Supporting |
-
-### 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### 👤 Author
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
-
----
-
-## Português
-
-### 🎯 Visão Geral
-
-**Java Workflow Engine** é uma aplicação HTML de nível profissional, complementada por CSS, Java que demonstra práticas modernas de engenharia de software, incluindo arquitetura limpa, testes abrangentes, implantação containerizada e prontidão para CI/CD.
-
-A base de código compreende **138 linhas** de código-fonte organizadas em **3 módulos**, seguindo as melhores práticas do setor para manutenibilidade, escalabilidade e qualidade de código.
-
-### ✨ Funcionalidades Principais
-
-- **📐 Clean Architecture**: Modular design with clear separation of concerns
-- **🧪 Test Coverage**: Unit and integration tests for reliability
-- **📚 Documentation**: Comprehensive inline documentation and examples
-- **🔧 Configuration**: Environment-based configuration management
-
-### 🏗️ Arquitetura
-
-```mermaid
-graph TB
-    subgraph Core["🏗️ Core"]
-        A[Main Module]
-        B[Business Logic]
-        C[Data Processing]
-    end
-    
-    subgraph Support["🔧 Support"]
-        D[Configuration]
-        E[Utilities]
-        F[Tests]
-    end
-    
-    A --> B --> C
-    D --> A
-    E --> B
-    F -.-> B
-    
-    style Core fill:#e1f5fe
-    style Support fill:#f3e5f5
-```
-
-### 🚀 Início Rápido
-
-#### Prerequisites
-
-#### Installation
-
-```bash
-git clone https://github.com/galafis/Java-Workflow-Engine.git
-cd Java-Workflow-Engine
-```
-
-### 📁 Estrutura do Projeto
-
-```
-Java-Workflow-Engine/
-├── docs/          # Documentation
-├── src/          # Source code
-│   └── main/
-│       └── java/
-├── LICENSE
-└── README.md
-```
-
-### 🛠️ Stack Tecnológica
-
-| Tecnologia | Descrição | Papel |
-|------------|-----------|-------|
-| **HTML** | Core Language | Primary |
-| CSS | 1 files | Supporting |
-| Java | 1 files | Supporting |
-
-### 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
-
-### 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### 👤 Autor
-
-**Gabriel Demetrios Lafis**
-- GitHub: [@galafis](https://github.com/galafis)
-- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
+MIT License
